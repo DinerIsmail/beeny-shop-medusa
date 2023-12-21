@@ -13,7 +13,7 @@
     "medusa"
   ],
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf dist",
+    "clean": "cross-env ./node_modules/.bin/rimraf dist",
     "build": "npm run clean && npm run build:server && npm run build:admin",
     "build:server": "npm run clean && medusa migrations run && tsc -p tsconfig.server.json",
     "build:admin": "medusa-admin build --deployment",
